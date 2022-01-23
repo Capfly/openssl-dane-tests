@@ -1,0 +1,9 @@
+[submodule "10-Libraries/urllib3"]
+	path = 10-Libraries/urllib3
+	url = https://github.com/Capfly/urllib3.git
+[submodule "10-Libraries/requests"]
+	path = 10-Libraries/requests
+	url = https://github.com/Capfly/requests.git
+[submodule "10-Libraries/cryptography"]
+	path = 10-Libraries/cryptography
+	url = https://github.com/Capfly/cryptography.git
