@@ -17,10 +17,29 @@ if not False:
         pass
 
 try:
-    r = req.get("https://stangew.de", check_dane=True)
+    print("1. Without dane check: ", end="")
+    r = req.get("https://stangew.de")
+    print("passed!")
     print(r.content[:200])
-except requests.exceptions.SSLError:
+except requests.exceptions.SSLError as e:
     print("SSL VERIFY FAILED")
+
+try:
+    print("2. With dane check [dnssec not ok]: ", end="")
+    r = req.get("https://stangew.de", check_dane=True)
+    print("passed!")
+    print(r.content[:200])
+except requests.exceptions.SSLError as e:
+    print("SSL VERIFY FAILED")
+
+try:
+    print("2. With dane check [dnssec ok]: ", end="")
+    r = req.get("https://fedoraproject.org", check_dane=True)
+    print("passed!")
+    print(r.content[:200])
+except requests.exceptions.SSLError as e:
+    print("SSL VERIFY FAILED")
+
 
 #http = urllib3.PoolManager(cert_reqs="CERT_REQUIRED", ca_certs=certifi.where())
 
