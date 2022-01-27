@@ -7,3 +7,6 @@
 [submodule "10-Libraries/cryptography"]
 	path = 10-Libraries/cryptography
 	url = https://github.com/Capfly/cryptography.git
+[submodule "10-Libraries/pyopenssl"]
+	path = 10-Libraries/pyopenssl
+	url = https://github.com/Capfly/pyopenssl
